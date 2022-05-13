@@ -29,9 +29,9 @@ const MobileMenu = ({ title, isOpen, onDismiss }) => {
           <NavLink href='/collections'>Collections</NavLink>
         </Nav>
         <Footer>
-          <a href='/terms'>Terms and Conditions</a>
-          <a href='/privacy'>Privacy Policy</a>
-          <a href='/contact'>Contact Us</a>
+          <FooterLink href='/terms'>Terms and Conditions</FooterLink>
+          <FooterLink href='/privacy'>Privacy Policy</FooterLink>
+          <FooterLink href='/contact'>Contact Us</FooterLink>
         </Footer>
       </Content>
     </Overlay>
@@ -82,6 +82,12 @@ const Nav = styled.nav`
   font-size: calc(18 / 16 * 1rem);
 `
 
+const Link = styled.a`
+  display: block;
+  text-decoration: none;
+  line-height: 2;
+`
+
 const Footer = styled.footer`
   flex: 1;
   display: flex;
@@ -90,22 +96,9 @@ const Footer = styled.footer`
   gap: 2px;
 
   font-size: calc(14 / 16 * 1rem);
-
-  a {
-    display: block;
-    text-decoration: none;
-    line-height: 2;
-
-    color: var(--color-gray-700);
-    font-weight: var(--font-weight-normal);
-  }
 `
 
-const NavLink = styled.a`
-  display: block;
-  text-decoration: none;
-  line-height: 2;
-
+const NavLink = styled(Link)`
   color: var(--color-gray-900);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
@@ -113,6 +106,11 @@ const NavLink = styled.a`
   &:first-of-type {
     color: var(--color-secondary);
   }
+`
+
+const FooterLink = styled(Link)`
+  color: var(--color-gray-700);
+  font-weight: var(--font-weight-normal);
 `
 
 export default MobileMenu
